@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   get '/items', to: 'items#index'
   post '/items', to: 'items#create'
   get '/items/new', to: 'items#new'
+  post '/items', to: 'items#create'
+  post '/items/:id', to: 'items#update'
+  get '/items/:id/edit', to: 'items#edit'
 end

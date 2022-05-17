@@ -1,0 +1,7 @@
+<h1> Edit <%= @item.name %> </h1>
+
+<%= form_with url: "/items/#{@item.id}", method: :post do |form| %>
+  <%= form.label :item_name, "Edit name:" %>
+  <%= form.text_field :item_name %>
+  <%= form.submit "Submit" %>
+<% end %>
