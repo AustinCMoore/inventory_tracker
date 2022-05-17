@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-Rspec.describe 'items index page' do
+RSpec.describe 'items index page' do
 
   it "lists all existing items" do
     item_a = Item.create!(name: 'Item A')
@@ -10,8 +10,8 @@ Rspec.describe 'items index page' do
     visit "/items"
     expect(current_path).to eq("/items")
 
-    expect(page).to have_content(item_a)
-    expect(page).to have_content(item_b)
-    expect(page).to have_content(item_c)
+    expect(page).to have_content(item_a.name)
+    expect(page).to have_content(item_b.name)
+    expect(page).to have_content(item_c.name)
   end
 end
