@@ -26,4 +26,17 @@ RSpec.describe 'items edit page' do
     expect(page).to_not have_content("Item A")
     expect(page).to have_content("Item B")
   end
+
+  it "routes back to the index page when name is not filled out" do
+    item = Item.create!(name: 'Item A')
+    visit "/items"
+
+    expect(page).to have_content("Item A")
+    expect(page).to_not have_content("Item B")
+
+    visit "/items/#{item.id}/edit"
+    click_button "Submit"
+
+    expect(current_path).to eq("/items/#{item.id}/edit")
+  end
 end
