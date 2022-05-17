@@ -25,4 +25,10 @@ RSpec.describe 'items create page' do
     expect(page).to have_content(item_a.name)
     expect(page).to have_content("Item B")
   end
+
+  it "raises an error if name is not filled" do
+    visit "/items/new"
+    click_button "Create Item"
+    expect(current_path).to eq("/items/new")
+  end
 end

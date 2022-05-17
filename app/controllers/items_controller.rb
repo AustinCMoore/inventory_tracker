@@ -4,8 +4,12 @@ class ItemsController < ApplicationController
   end
 
   def create
-    Item.create!(name: params[:item_name])
-    redirect_to "/items"
+    if params[:item_name].empty?
+      redirect_to "/items/new", notice: "Please provide an item name"
+    else
+      Item.create!(name: params[:item_name])
+      redirect_to "/items", notice: "Your item has been created"
+    end
   end
 
   def new
