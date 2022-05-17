@@ -1,0 +1,7 @@
+<h1> Create New Item </h1>
+
+<%= form_with url: "/items", method: :post do |form| %>
+  <%= form.label :item_name, "Item name:" %>
+  <%= form.text_field :item_name %>
+  <%= form.submit "Create Item" %>
+<% end %>
