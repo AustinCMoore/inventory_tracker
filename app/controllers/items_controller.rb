@@ -14,4 +14,14 @@ class ItemsController < ApplicationController
 
   def new
   end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    item = Item.find(params[:id])
+    item.update!(name: params[:item_name])
+    redirect_to "/items", notice: "Your item has been updated"
+  end
 end
