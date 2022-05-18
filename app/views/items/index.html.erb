@@ -1,5 +1,8 @@
 <h1> Items </h1>
+<%= button_to "Add Item", "/item/new", method: :get %>
 
 <% @items.each do |item| %>
-<li> <%= item.name %> </li>
+<h3> <%= item.name %> </h3>
+<li> <%= button_to "Edit #{item.name}", "/item/#{item.id}/edit", method: :get %> </li>
+<li> <%= button_to "Delete #{item.name}", "/item/#{item.id}/delete" %> </li>
 <% end %>
