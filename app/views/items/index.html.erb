@@ -4,5 +4,5 @@
 <% @items.each do |item| %>
 <h3> <%= item.name %> </h3>
 <li> <%= button_to "Edit #{item.name}", "/item/#{item.id}/edit", method: :get %> </li>
-<li> <%= button_to "Delete #{item.name}", "/item/#{item.id}/delete" %> </li>
+<li> <%= button_to "Delete #{item.name}", "/item/#{item.id}/delete", method: :delete %> </li>
 <% end %>

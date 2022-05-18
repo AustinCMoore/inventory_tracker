@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   post '/items', to: 'items#create'
   post '/item/:id', to: 'items#update'
   get '/item/:id/edit', to: 'items#edit'
+  delete '/item/:id/delete', to: 'items#destroy'
 end

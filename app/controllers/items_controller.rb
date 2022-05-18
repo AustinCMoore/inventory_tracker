@@ -28,4 +28,11 @@ class ItemsController < ApplicationController
       redirect_to "/items", notice: "Your item has been updated"
     end
   end
+
+  def destroy
+    item = Item.find(params[:id])
+    if item.destroy
+      redirect_to "/items", notice: "#{item.name} has been deleted"
+    end
+  end
 end
